@@ -121,6 +121,7 @@
             android:id="@+id/lokasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:entries="@array/pilihlokasi" />
 
         <Button
@@ -132,10 +133,27 @@
             android:text="SUBMIT" />
 
         <TextView
+            android:id="@+id/hsl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" />
+
+        <TextView
             android:id="@+id/hsl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hasil"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/hsl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/hsl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>

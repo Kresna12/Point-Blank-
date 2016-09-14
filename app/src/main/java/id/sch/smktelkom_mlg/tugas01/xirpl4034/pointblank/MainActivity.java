@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etNama;
     RadioButton T, CT;
     Button sbm;
-    TextView nm, pk, ps, lp, hsl;
+    TextView nm, pk, ps, lp, hsl, hsl2, hsl3, hsl4;
     Spinner sL;
     CheckBox snip, pis, ass;
 
@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         CT = (RadioButton) findViewById(R.id.CT);
         sbm = (Button) findViewById(R.id.sbm);
         hsl = (TextView) findViewById(R.id.hsl);
+        hsl2 = (TextView) findViewById(R.id.hsl2);
+        hsl3 = (TextView) findViewById(R.id.hsl3);
+        hsl4 = (TextView) findViewById(R.id.hsl4);
         nm = (TextView) findViewById(R.id.nm);
         pk = (TextView) findViewById(R.id.pk);
         ps = (TextView) findViewById(R.id.ps);
@@ -51,7 +54,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void doClick() {
+        hsl3.setText("Nama :" + etNama.getText().toString());
+
         String view2 = null;
         if (T.isChecked()) {
             view2 = T.getText().toString();
@@ -60,11 +66,22 @@ public class MainActivity extends AppCompatActivity {
         }
         if (view2 == null) {
 
-            hsl.setText("You must choose your troops");
+            hsl.setText("Pilih Karakter");
         } else {
-            hsl.setText("Your Troops : " + view2);
+            hsl.setText("Karakter Pilihanmu : " + view2);
         }
+
+        hsl2.setText("Lokasi :" + sL.getSelectedItem().toString());
+
+        String view = "Senjata : \n ";
+        int startlen = view.length();
+        if (snip.isChecked()) view += snip.getText() + "\n";
+        if (pis.isChecked()) view += pis.getText() + "\n";
+        if (ass.isChecked()) view += ass.getText() + "\n";
+        if (hsl4.length() == startlen) view += "Tidak Memilih Senjata";
+        hsl4.setText(view);
     }
+
 
     private void doProcess() {
         if (isValid()) {
@@ -77,8 +94,9 @@ public class MainActivity extends AppCompatActivity {
         boolean valid = true;
         String name = etNama.getText().toString();
 
+
         if (name.isEmpty()) {
-            etNama.setError("You Must Insert Your Name");
+            etNama.setError("Nama Harus Diisi");
             valid = false;
         } else {
             etNama.setError(null);
