@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pilihlokasi">
+        <item>Pilih lokasi</item>
+        <item>Burning Hall</item>
+        <item>Luxville</item>
+        <item>Crackdown</item>
+        <item>Mini Indonesia</item>
+    </string-array>
+</resources>
